@@ -8,12 +8,22 @@ import javafx.stage.Stage;
 
 import java.util.Objects;
 
+/**
+ * Класс запуска окна
+ *
+ * @author Кирилл Аксенов и Владимир Майоров
+ * @version 1.0
+ */
+
 public class Main extends Application {
 
+    /**
+     * Процедура старта окна программы
+     *
+     * @param primaryStage - состояние окна программы
+     */
     @Override
     public void start(Stage primaryStage) throws Exception {
-        System.out.println("java version: "+System.getProperty("java.version"));//DEBUG
-        System.out.println("javafx.version: " + System.getProperty("javafx.version"));//DEBUG
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("sample.fxml")));
         primaryStage.setTitle("WeatherApp");
         primaryStage.setScene(new Scene(root, 800, 506));

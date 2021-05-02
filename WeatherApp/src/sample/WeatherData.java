@@ -2,25 +2,87 @@ package sample;
 
 import java.util.Arrays;
 
-public class WeatherData {
-    float latCord, longCord;
-    String city;// место
-    String weather_Type_Image;// тип погоды(картинка)
-    String temperature;
-    String feels_Like;
-    String current_Time;// текущее время
-    String humidity;// влажность
-    String wind;// ветер
-    String pressure;// давление
-    String[] hours;// часы на данный момент
-    String[] hours_weather_Type_Images;// картинки по часам на данный момент
-    String[] hours_Temperatures;// температура по часам на данный момент
-    String[] dates;// даты на данный момент
-    String[] dates_Day_of_Week;// дни недели
-    String[] dates_weather_Type_Images;// картинки по датам на данный момент
-    String[] dates_Temperatures_Day;// температура по датам днем
-    String[] dates_Temperatures_Night;// температура по датам ночью
+/**
+ * Класс с данными погоды
+ *
+ * @author Кирилл Аксенов и Владимир Майоров
+ * @version 1.0
+ */
 
+public class WeatherData {
+    /**
+     * Поля координат
+     */
+    float latCord, longCord;
+    /**
+     * Поле места
+     */
+    String city;
+    /**
+     * Поле названия картинки погоды
+     */
+    String weather_Type_Image;
+    /**
+     * Поле температуры
+     */
+    String temperature;
+    /**
+     * Поле чувствуется как
+     */
+    String feels_Like;
+    /**
+     * Поле текущее время
+     */
+    String current_Time;
+    /**
+     * Поле влажность
+     */
+    String humidity;
+    /**
+     * Поле ветер
+     */
+    String wind;
+    /**
+     * Поле давление
+     */
+    String pressure;
+    /**
+     * Поле массив ближайших девяти часов
+     */
+    String[] hours;
+    /**
+     * Поле массив названий картинок погоды по часам
+     */
+    String[] hours_weather_Type_Images;
+    /**
+     * Поле массив температур по часам
+     */
+    String[] hours_Temperatures;
+    /**
+     * Поле массив дат на ближайшую неделю
+     */
+    String[] dates;// даты на данный момент
+    /**
+     * Поле массив дней недели на ближайшую неделю
+     */
+    String[] dates_Day_of_Week;
+    /**
+     * Поле массив картинок погоды на ближайшую неделю
+     */
+    String[] dates_weather_Type_Images;
+    /**
+     * Поле массив температур днем на ближайшую неделю
+     */
+    String[] dates_Temperatures_Day;
+    /**
+     * Поле массив температур ночью на ближайшую неделю
+     */
+    String[] dates_Temperatures_Night;
+
+
+    /**
+     * Конструктор - инициализация класса с пустыми значениями
+     */
 
     public WeatherData() {
         this.latCord = 0;
@@ -42,6 +104,12 @@ public class WeatherData {
         this.dates_Temperatures_Night = new String[8];
         this.dates_Day_of_Week = new String[8];
     }
+
+    /**
+     * Функция вывода полей класса в консоль
+     *
+     * @return возвращает строку с значениями всех полей класса
+     */
 
     @Override
     public String toString() {

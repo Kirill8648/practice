@@ -2,6 +2,11 @@ plugins {
     id 'java'
     id 'application'
     id 'org.openjfx.javafxplugin' version '0.0.9'
+    id 'edu.sc.seis.launch4j' version '2.5.0'
+}
+
+launch4j {
+    mainClassName = 'App'
 }
 
 group 'org.example'
@@ -26,4 +31,4 @@ javafx {
     version = '11.0.2'
 }
 
-mainClassName = 'org.example.App'
+mainClassName = 'App'

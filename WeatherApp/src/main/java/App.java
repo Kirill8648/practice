@@ -23,7 +23,7 @@ public class App extends Application {
     /**
      * Процедура старта окна программы
      *
-     * @param primaryStage - состояние окна программы
+     * @param primaryStage состояние окна программы
      */
     @Override
     public void start(Stage primaryStage) throws IOException {

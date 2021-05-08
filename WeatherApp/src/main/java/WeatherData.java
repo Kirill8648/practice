@@ -59,7 +59,7 @@ public class WeatherData {
     /**
      * Поле массив дат на ближайшую неделю
      */
-    String[] dates;// даты на данный момент
+    String[] dates;
     /**
      * Поле массив дней недели на ближайшую неделю
      */
@@ -108,7 +108,6 @@ public class WeatherData {
      *
      * @return возвращает строку с значениями всех полей класса
      */
-
     @Override
     public String toString() {
         return "WeatherData{" +
@@ -116,8 +115,8 @@ public class WeatherData {
                 ", longCord=" + longCord +
                 ", city='" + city + '\'' +
                 ", weather_Type_Image='" + weather_Type_Image + '\'' +
-                ", temperature=" + temperature +
-                ", feels_Like=" + feels_Like +
+                ", temperature='" + temperature + '\'' +
+                ", feels_Like='" + feels_Like + '\'' +
                 ", current_Time='" + current_Time + '\'' +
                 ", humidity='" + humidity + '\'' +
                 ", wind='" + wind + '\'' +
@@ -127,9 +126,9 @@ public class WeatherData {
                 ", hours_Temperatures=" + Arrays.toString(hours_Temperatures) +
                 ", dates=" + Arrays.toString(dates) +
                 ", dates_Day_of_Week=" + Arrays.toString(dates_Day_of_Week) +
+                ", dates_weather_Type_Images=" + Arrays.toString(dates_weather_Type_Images) +
                 ", dates_Temperatures_Day=" + Arrays.toString(dates_Temperatures_Day) +
                 ", dates_Temperatures_Night=" + Arrays.toString(dates_Temperatures_Night) +
-                ", dates_weather_Type_Images=" + Arrays.toString(dates_weather_Type_Images) +
                 '}';
     }
 }

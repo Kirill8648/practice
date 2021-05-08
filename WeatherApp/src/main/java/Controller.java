@@ -255,8 +255,8 @@ public class Controller {
     /**
      * Функция создания окна ввода текста
      *
-     * @param s - текущий город
-     * @return output - возвращает введенное значение
+     * @param s текущий город
+     * @return output возвращает введенное значение
      */
     public String createInputDialog(String s) {
         String output = null;
@@ -274,7 +274,7 @@ public class Controller {
     /**
      * Процедура создания окна ошибки
      *
-     * @param massage - сообщение с ошибкой
+     * @param massage сообщение с ошибкой
      */
     public void createErrorDialog(String massage) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -287,8 +287,8 @@ public class Controller {
     /**
      * Процедура создания окна ошибки с исключением
      *
-     * @param massage - сообщение с ошибкой
-     * @param e       - сообщение исключения
+     * @param massage сообщение с ошибкой
+     * @param e       сообщение исключения
      */
     public void creteExceptionDialog(Exception e, String massage) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -350,8 +350,8 @@ public class Controller {
     /**
      * Процедура загрузки данных в класс погоды
      *
-     * @param weatherData - в какой класс загружать
-     * @param city        - данные о каком городе загружать
+     * @param weatherData в какой класс загружать
+     * @param city        данные о каком городе загружать
      */
     public void loadDataToWeatherData(WeatherData weatherData, String city) {
         city = city.replaceAll(" ", "%20");
@@ -364,7 +364,7 @@ public class Controller {
     /**
      * Функция преобразования milliseconds в время
      *
-     * @param unixSeconds - миллисекунды для преобразования
+     * @param unixSeconds миллисекунды для преобразования
      */
     public String getTimeFromUnits(int unixSeconds) {
         Date date = new Date(unixSeconds * 1000L);
@@ -376,7 +376,7 @@ public class Controller {
     /**
      * Функция преобразования milliseconds в дату
      *
-     * @param unixSeconds - миллисекунды для преобразования
+     * @param unixSeconds миллисекунды для преобразования
      */
     public String getDateFromUnits(int unixSeconds) {
         Date date = new Date(unixSeconds * 1000L);
@@ -434,7 +434,7 @@ public class Controller {
     /**
      * Функция преобразования milliseconds в день недели
      *
-     * @param unixSeconds - миллисекунды для преобразования
+     * @param unixSeconds миллисекунды для преобразования
      */
     public String getDayOfWeekFromUnits(int unixSeconds) {
         Date date = new Date(unixSeconds * 1000L);
@@ -483,8 +483,8 @@ public class Controller {
     /**
      * Функция запроса и получения данных о погоде
      *
-     * @param urlAddress - адресс, по которому запрашивать погоду
-     * @return content.toString() - данные о погоде в формате json
+     * @param urlAddress адресс, по которому запрашивать погоду
+     * @return content.toString() данные о погоде в формате json
      */
     public String getUrlContentWeather(String urlAddress) {
         StringBuilder content = new StringBuilder();
@@ -508,8 +508,8 @@ public class Controller {
     /**
      * Функция запроса и получения данных о координатах
      *
-     * @param urlAddress - адресс, по которому запрашивать координаты
-     * @return content.toString() - данные о координатах в формате json
+     * @param urlAddress адресс, по которому запрашивать координаты
+     * @return content.toString() данные о координатах в формате json
      */
     public String getUrlContentLatLng(String urlAddress) {
         StringBuilder content = new StringBuilder();
@@ -518,11 +518,7 @@ public class Controller {
             URLConnection urlConnection = url.openConnection();
             urlConnection.connect();
 
-            //InputStreamReader r=new InputStreamReader(urlConnection.getInputStream(), "UTF-8");
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
-
-//            DataOutputStream tmpStream = new DataOutputStream(connection.getOutputStream());
-//            BufferedWriter outputStream = new BufferedWriter(new OutputStreamWriter(tmpStream, "UTF-8"));
 
             String line;
 
@@ -539,8 +535,8 @@ public class Controller {
     /**
      * Процедура записи данных о координатах из json'а в класс данных о погоде
      *
-     * @param inputJson   - json для парсинга
-     * @param weatherData - класс погоды, куда записывать данные
+     * @param inputJson   json для парсинга
+     * @param weatherData класс погоды, куда записывать данные
      */
     public void parseLatLongJson(String inputJson, WeatherData weatherData) {
         try {
@@ -560,8 +556,8 @@ public class Controller {
     /**
      * Процедура записи данных о погоде из json'а в класс данных о погоде
      *
-     * @param inputJson   - json для парсинга
-     * @param weatherData - класс погоды, куда записывать данные
+     * @param inputJson   json для парсинга
+     * @param weatherData класс погоды, куда записывать данные
      */
     public void parseWeatherJson(String inputJson, WeatherData weatherData) {
         try {
@@ -600,7 +596,7 @@ public class Controller {
     /**
      * Процедура отрисовки погоды на экран
      *
-     * @param weatherDataForDrawing - данные о погоде, которые отрисовывать
+     * @param weatherDataForDrawing данные о погоде, которые отрисовывать
      */
     public void drawWeather(WeatherData weatherDataForDrawing) {
         city.setText(weatherDataForDrawing.city);
